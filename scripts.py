@@ -7,9 +7,9 @@ from random import choice
 def get_schoolkid(full_name):
     try:
         return Schoolkid.objects.get(full_name__contains=full_name)
-    except ObjectDoesNotExist:
+    except Schoolkid.DoesNotExist:
         print('Такого ученика не нашлось в базе, проверь на опечатки.')
-    except MultipleObjectsReturned:
+    except Schoolkid.MultipleObjectsReturned:
         print('Найдено несколько учеников, попробуй уточнить запрос.')
 
 
